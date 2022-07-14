@@ -33,7 +33,10 @@ export class CoursesService {
 
     update(id: string, updateCourseDTO: any) {
 
-        let indexCourse = this.courses.findIndex((course: Course) => course.id === Number(id));
+        let indexCourse = this.courses.findIndex((course: Course) => {
+            return course.id === Number(id)
+        });
+
         this.courses[indexCourse] = updateCourseDTO;
 
     }
